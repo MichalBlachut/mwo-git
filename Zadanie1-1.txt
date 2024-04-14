@@ -1,0 +1,213 @@
+
+Student@S47-313-22 MINGW64 ~
+$ cd mwo-git
+
+Student@S47-313-22 MINGW64 ~/mwo-git
+$ git init
+Initialized empty Git repository in C:/Users/Student/mwo-git/.git/
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git config user.name "Michal Blachut"
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git config user.emali "michal.blachut16@gmail.com"
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ cat SomeProgram.java
+cat: SomeProgram.java: No such file or directory
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git add SomeProgram.java
+fatal: pathspec 'SomeProgram.java' did not match any files
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git add SomeProgram.java
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   SomeProgram.java
+
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit -m "Add first implementation of the program"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Student@S47-313-22.(none)')
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git config --global user.email "michal.blachut16@gmail.com"
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git config --global user.name "Michal Blachut"
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit -m "Add first implementation of the program"
+[master (root-commit) b3d37ba] Add first implementation of the program
+ 1 file changed, 5 insertions(+)
+ create mode 100644 SomeProgram.java
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SomeProgram.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SomeProgram.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit -m "Dodalem linijke kodu"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SomeProgram.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git add SomeProgram.java
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git commit -m "Add first implementation of the program"
+[master 63d255d] Add first implementation of the program
+ 1 file changed, 1 insertion(+)
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ cat SomeProgram.java
+public class SomeProgram {
+        public static void main(String[]args){
+                System.out.println("WearelearningtouseGit.");
+                System.out.println("WewillbeGitexperts,soon.");
+        }
+}
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git log
+commit 63d255d1ab5de3d8c08160b0c4b5577adb82417a (HEAD -> master)
+Author: Michal Blachut <michal.blachut16@gmail.com>
+Date:   Sun Apr 14 18:45:44 2024 +0200
+
+    Add first implementation of the program
+
+commit b3d37bad0bcd2efac150f14504bd12d1b5a892e9
+Author: Michal Blachut <michal.blachut16@gmail.com>
+Date:   Sun Apr 14 18:39:12 2024 +0200
+
+    Add first implementation of the program
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git show b3d37bad0bcd2efac150f14504bd12d1b5a892e9
+commit b3d37bad0bcd2efac150f14504bd12d1b5a892e9
+Author: Michal Blachut <michal.blachut16@gmail.com>
+Date:   Sun Apr 14 18:39:12 2024 +0200
+
+    Add first implementation of the program
+
+diff --git a/SomeProgram.java b/SomeProgram.java
+new file mode 100644
+index 0000000..be41949
+--- /dev/null
++++ b/SomeProgram.java
+@@ -0,0 +1,5 @@
++public class SomeProgram {
++       public static void main(String[]args){
++               System.out.println("WearelearningtouseGit.");
++       }
++}
+\ No newline at end of file
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git show
+commit 63d255d1ab5de3d8c08160b0c4b5577adb82417a (HEAD -> master)
+Author: Michal Blachut <michal.blachut16@gmail.com>
+Date:   Sun Apr 14 18:45:44 2024 +0200
+
+    Add first implementation of the program
+
+diff --git a/SomeProgram.java b/SomeProgram.java
+index be41949..f2ded36 100644
+--- a/SomeProgram.java
++++ b/SomeProgram.java
+@@ -1,5 +1,6 @@
+ public class SomeProgram {
+        public static void main(String[]args){
+                System.out.println("WearelearningtouseGit.");
++               System.out.println("WewillbeGitexperts,soon.");
+        }
+ }
+\ No newline at end of file
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git show
+HEAD     master
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git show
+HEAD     master
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git blame SomeProgram.java
+^b3d37ba (Michal Blachut 2024-04-14 18:39:12 +0200 1) public class SomeProgram {
+^b3d37ba (Michal Blachut 2024-04-14 18:39:12 +0200 2)   public static void main(String[]args){
+^b3d37ba (Michal Blachut 2024-04-14 18:39:12 +0200 3)           System.out.println("WearelearningtouseGit.");
+63d255d1 (Michal Blachut 2024-04-14 18:45:44 +0200 4)           System.out.println("WewillbeGitexperts,soon.");
+^b3d37ba (Michal Blachut 2024-04-14 18:39:12 +0200 5)   }
+^b3d37ba (Michal Blachut 2024-04-14 18:39:12 +0200 6) }
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git remote add origin https://github.com/MichalBlachut/mwo-git.git
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$ git push -u origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 624 bytes | 624.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/MichalBlachut/mwo-git.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Student@S47-313-22 MINGW64 ~/mwo-git (master)
+$
